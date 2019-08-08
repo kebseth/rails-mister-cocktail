@@ -1,0 +1,21 @@
+<h1>List of cocktails</h1>
+
+<%= link_to 'add a cocktail', new_cocktail_path %>
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    Lunch
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Dinner
+  </div>
+</div>
+
+<% @cocktails.each do |cocktail| %>
+  <%= link_to cocktail.name, cocktail_path(cocktail) %>
+<% end %>
