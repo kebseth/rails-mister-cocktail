@@ -1,21 +1,42 @@
-<h1>List of cocktails</h1>
-
-<%= link_to 'add a cocktail', new_cocktail_path %>
-
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
+<div class='wrapper'>
+  <div class='carousel'>
+    <div class='carousel__item'>
+      <div class='carousel__item-body'>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @cock3[0].image_url %>)">
+           <p><%= @cock3[0].name %></p>
+        </div>
+      </div>
+    </div>
+    <div class='carousel__item'>
+      <div class='carousel__item-body'>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @cock3[1].image_url %>)">
+           <p><%= @cock3[1].name %></p>
+        </div>
+      </div>
+    </div>
+    <div class='carousel__item'>
+        <div class='carousel__item-body'>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @cock3[2].image_url %>)">
+           <p><%= @cock3[2].name %></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<% @cocktails.each do |cocktail| %>
-  <%= link_to cocktail.name, cocktail_path(cocktail) %>
+
+<div class="container prest">
+<h1 class="text-center mb-4">List of cocktails</h1>
+<%= link_to new_cocktail_path  do%>
+  <h2> <i class="fas fa-plus"> </i>Add a cocktail</h2>
 <% end %>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+        <%= link_to cocktail_path(cocktail) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image_url %>)">
+           <p><%= cocktail.name %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

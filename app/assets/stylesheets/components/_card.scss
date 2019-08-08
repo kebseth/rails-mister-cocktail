@@ -1,13 +1,18 @@
+.prest{
+  width: 1300px;
+}
+
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
 .card-category {
+  width: 100%;
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +55,7 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 

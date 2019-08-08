@@ -16,3 +16,4 @@
 //= require_tree .
 
 import 'bootstrap';
+import '_general.js';

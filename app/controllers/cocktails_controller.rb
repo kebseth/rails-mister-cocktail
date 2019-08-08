@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
+    @cock3 = Cocktail.first(3)
   end
 
   def show
@@ -24,6 +25,6 @@ class CocktailsController < ApplicationController
   private
 
   def params_cocktail
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :image_url)
   end
 end

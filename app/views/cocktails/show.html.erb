@@ -1,3 +1,6 @@
 <h1><%= @cocktail.name %></h1>
 <p>Find me in app/views/cocktails/show.html.erb</p>
 <%= link_to 'add a dose', new_cocktail_dose_path(@cocktail) %>
+<p>
+<%= link_to 'Return to cocktails', cocktails_path %>
+</p>
