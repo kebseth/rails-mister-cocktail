@@ -1,6 +1,15 @@
 <div class="container">
   <h1 class="text-center"><%= @cocktail.name %></h1>
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill, alt: "cocktail" %>
+  <div class="container">
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill, alt: "cocktail" %>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <li>
+        <p> <%= dose.description %> - <%= dose.ingredient.name %> || <%= link_to 'remove', dose_path(dose), method: :delete, data: {confirm: 'Are you sure ?'} %></p>
+        <% end %>
+      </li>
+    </ul>
+  </div>
   <%= link_to new_cocktail_dose_path(@cocktail) do %>
     <h2> <i class="fas fa-plus"> </i>Add a dose</h2>
   <% end %>
