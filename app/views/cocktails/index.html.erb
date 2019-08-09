@@ -1,11 +1,23 @@
-<%#= cl_image_tag('ou0gfofrjabyyjqw5no9',
-      width: 400, height: 300, crop: :fill) %>
+<div class='wrapper'>
+  <div class='carousel mt-5'>
+    <%  @cocktails.take(3).each do |cocktail| %>
+      <div class='carousel__item'>
+        <div class='carousel__item-body'>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo %> )">
+             <p><%= cocktail.name %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 
 <div class="container prest">
-<h1 class="text-center mb-4">List of cocktails</h1>
-<%= link_to new_cocktail_path  do%>
-  <h2> <i class="fas fa-plus"> </i>Add a cocktail</h2>
-<% end %>
+  <h1 class="text-center mb-4">List of cocktails</h1>
+  <%= link_to new_cocktail_path  do%>
+    <h2> <i class="fas fa-plus"> </i>Add a cocktail</h2>
+  <% end %>
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail) do %>

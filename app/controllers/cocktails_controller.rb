@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
+    :min3?
   end
 
   def show
