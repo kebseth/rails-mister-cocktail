@@ -1,5 +1,1 @@
-{
-  "deploy": {
-    "rakegoals": ["assets:precompile", "db:migrate"]
-  }
-}
+{"apps":[{"app_id":"app_7201ecb6-22b3-4960-8244-478366d4073d","deploy_url":"https://push-par-clevercloud-customers.services.clever-cloud.com/app_7201ecb6-22b3-4960-8244-478366d4073d.git","name":"mister-cocktail","alias":"mister-cocktail"}]}
