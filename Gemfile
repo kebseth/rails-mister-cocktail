@@ -18,6 +18,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
