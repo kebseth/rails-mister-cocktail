@@ -1,6 +1,3 @@
-
-
-
 <div class="container prest">
 <h1 class="text-center mb-4">List of cocktails</h1>
 <%= link_to new_cocktail_path  do%>
@@ -9,7 +6,7 @@
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail) do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image_url %>)">
+          <div class="card-category">
            <p><%= cocktail.name %></p>
         </div>
       <% end %>
